@@ -1,0 +1,52 @@
+GET  http://localhost:3000 HTTP/1.1
+###
+GET https://localhost:3000/api/ HTTP/1.1
+###
+//API used to retrieve/get the bulletins posts from the database
+GET https://localhost:3000/api/bulletin HTTP/1.1
+###
+//API used to delete the bulletins posts from the database
+DELETE https://localhost:3000/api/bulletin/64eb5084a6211cc4352b6f76 HTTP/1.1
+###
+//API used to send/insert the bulletins posts into the database according to its id and name
+POST https://localhost:3000/api/bulletin HTTP/1.1
+content-type: application/json
+
+{
+    "id": "1",
+    "department": "Water and Sanitation",
+    "keyIssue": "Not enough clean water in rural areas",
+    "priority": "High"
+    
+}
+###
+//API used to send/insert the users login into the database according to the username and password
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ST10091016",
+    "password": "SigningIn"
+}
+###
+POST https://localhost:3000/api/bulletin HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNUMTAwOTEwMTYiLCJ1c2VyaWQiOiI2NGViODk3MGU1MmQzYjA3YTMyMDgxZDQiLCJpYXQiOjE2OTMxNjMxNjAsImV4cCI6MTY5MzE2Njc2MH0.WRKXbMq9XDvB2UgstAgcDVnQRKqaPxELEQXiow6oXfU
+
+{
+    "id": "2",
+    "department": "Health",
+    "keyIssue": "Healthcare centres not easily accessible for people in rural areas",
+    "priority": "High"
+}
+
+###
+//inserting another fruit after authorization
+POST https://localhost:3000/api/bulletin HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNUMTAwOTEwMTYiLCJ1c2VyaWQiOiI2NGViODk3MGU1MmQzYjA3YTMyMDgxZDQiLCJpYXQiOjE2OTMxNjMxNjAsImV4cCI6MTY5MzE2Njc2MH0.WRKXbMq9XDvB2UgstAgcDVnQRKqaPxELEQXiow6oXfU
+
+{
+    "id": "33",
+    "name": "Peach"
+}
